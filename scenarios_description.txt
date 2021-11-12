@@ -1,0 +1,41 @@
+To reach .feature file check 'cypress>integration'
+
+There are 4 scenarios:
+- Login with valid user : To check user successfully logged in
+- Login with invalid user: To check user not being able to login
+- Success Order Method 1: User journey from login to complete shopping
+- Success Order Method 2: Same journey with Success Order Method 1 but with a different script spelling
+- Remove Order Method: Checks if the user can successfully delete the product from shopping card
+
+Scenarios using BDD are intended to be understood by both the business unit and the software team.
+
+1 - Login with valid user
+A successful login is a must for an application. User cannot continue with other steps without login.
+
+2- Login with invalid user
+User not allowed by the system must not login. It can cause undesirable situation.
+
+3- Success Order Method 1 & Success Order Method 2
+First I did the exploratory test. I have observed the user journeys of other given users.
+I observed that there are problems especially in adding or removing products and product information.
+In my observation, the differences are not only functional, but also show a difference in content visually.
+Since I will write 2 scripts, I tried to cover the situations that I consider as important as possible.
+
+> 'Login Page' 
+> 'Product List Page' : Select Product 
+> 'Product Detail Page' : Add Item to Shopping Card 
+> 'Shopping Card Page':Check Item is correct 
+> 'Checkout Page' : Fill personal information 
+> 'Checkout Overview' : Check payment & shipping information 
+> 'Checkout Complete' : Check pic & text
+> Logged out
+
+4- Remove Order Method
+As I mentioned above, product deletion is one of the important issues I see, such as adding for different user.
+
+> 'Login Page' 
+> 'Product List Page' : Select Product 
+> 'Product Detail Page' : Add Item to Shopping Card, Check Shopping card
+> 'Product List Page' : Select Product  
+> 'Product Detail Page' : Add Item to Shopping Card, Delete last added product, Check shoppig card
+> Logged out

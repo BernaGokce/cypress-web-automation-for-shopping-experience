@@ -1,0 +1,35 @@
+{
+  "name": "cypress-web-automation-for-shopping-experience",
+  "version": "1.0.0",
+  "description": "cypress web automation for shopping experience",
+  "main": "index.js",
+  "scripts": {
+    "cy:open": "cypress open",
+    "cy:run": "cypress run",
+    "cy:run:chrome": "cypress run --browser chrome",
+    "clean:reports": "rm -R -f cypress/reports && mkdir cypress/reports",
+    "clean": "npm run clean:reports",
+    "merge:reports": "npm run clean:reports; npm run cy:run; mochawesome-merge cypress/reports/*.json > cypress/reports/full_report.json",
+    "report:copyScreenshots": "cp -r cypress/screenshots cypress/reports/screenshots",
+    "generate:report": "npm run merge:reports; marge cypress/reports/full_report.json --reportDir cypress/reports --reportFilename full_report.html; npm run report:copyScreenshots"
+  },
+  "author": "bernagokce",
+  "license": "ISC",
+  "dependencies": {
+    "@types/lodash": "^4.14.176",
+    "cypress-cucumber-preprocessor": "^4.3.0",
+    "mochawesome": "^7.0.1",
+    "mochawesome-merge": "^4.2.0",
+    "mochawesome-report-generator": "^6.0.1",
+    "prettier": "^2.4.1"
+  },
+  "cypress-cucumber-preprocessor": {
+    "nonGlobalStepDefinitions": false
+  },
+  "devDependencies": {
+    "cypress": "^9.0.0",
+    "install": "^0.13.0",
+    "npm": "^8.1.3",
+    "or": "^0.2.0"
+  }
+}

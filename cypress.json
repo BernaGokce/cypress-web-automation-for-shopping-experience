@@ -1,0 +1,16 @@
+{
+    "ignoreTestFiles": "*.js",
+    "testFiles": "**/*.{feature,features}",
+    "reporter": "mochawesome",
+    "reporterOptions":
+    {
+        "reportDir":"cypress/reports",
+        "reportFilename": "report",
+        "overwrite": false,
+        "html": true,
+        "json": true,
+        "charts": true
+    },
+    "video": true,
+    "screenshotsFolder":"../cypress-cucumber/cypress/screenshots"
+}
